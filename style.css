@@ -1,7 +1,7 @@
 html,
 body {
     max-width: 100%;
-    background-color: #faf6ef;
+    background-color: #FFF3DB;
 }
 
 .scroll-container {
@@ -29,6 +29,7 @@ h4 {
     font-optical-sizing: auto;
     font-style: normal;
     color: #335863;
+    transition: font-size 0.3s ease;
 }
 
 li,
@@ -37,41 +38,73 @@ p {
     font-optical-sizing: auto;
     font-style: normal;
     color: #3B2517;
+    transition: font-size 0.3s ease;
 }
 
 h1 {
-    font-weight: 500;
-    font-size: 52px;
+    font-weight: 300;
+    font-size: 60px;
 }
 
 h2 {
-    font-weight: 400;
+    font-weight: 300;
     font-size: 36px;
 }
 
 h3 {
-    font-weight: 300;
+    font-weight: 200;
     font-size: 32px;
 }
 
 h4 {
-    font-weight: 300;
+    font-weight: 200;
     font-size: 24px;
 }
 
 li,
 p {
+    font-weight: 250;
     color: #432d29;
     font-size: 24px;
 }
 
+a {
+    text-decoration: none;
+}
+
+img {
+    border: #335863 0.5px solid;
+    max-width: 100%;
+    object-fit: cover;
+    /* box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px; */
+}
+
 button {
-    background-color: transparent;
-    border: none;
+    background-color: #d8e7d9;
+    border: 0.5px solid #335863;
+    border-radius: 20px;
+    padding: 1%;
     font-family: "Petrona", serif;
-    font-weight: 400;
+    font-weight: 200;
     font-size: 28px;
     color: #335863;
+    transition: font-size 0.3s ease;
+}
+
+.img-row {
+    display: flex;
+    gap: 4%;
+}
+
+.flex-start {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: flex-start;
+}
+
+.flex-start h1 {
+    margin: 0%;
 }
 
 /* HERO */
@@ -79,34 +112,38 @@ button {
 .hero {
     display: flex;
     flex-direction: column;
+    align-self: flex-start;
 }
 
 .hero-img-container {
-    width: 100%;
-    height: 75vh;
-    overflow: hidden;
-}
+    background-image: url('assets/birdseye-view-VSCO.jpg');
+        border: #335863 0.5px solid;
 
-.hero-img-container img {
     border-radius: 20px;
     width: 90vw;
-    height: 100%;
-    object-fit: cover;
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
 }
 
-.hero-heading,
-.lower-hero {
+.hero-heading {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.content {
+.header-title {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 10vh;
-    max-width: 100%;
+    align-items: center;
+}
+
+.header-title h1 {
+    margin-bottom: 0%;
+}
+
+.header-title h4 {
+    margin-top: 0%;
 }
 
 .tag-line {
@@ -140,9 +177,9 @@ button {
     gap: calc(390px + 4%);
 }
 
-.reviews-carousel:hover .reviews {
+/* .reviews-carousel:hover .reviews {
     animation-play-state: paused;
-}
+} */
 
 .reviews {
     will-change: transform;
@@ -186,6 +223,7 @@ button {
 
 .card {
     border: 1px solid #335863;
+    background-color: #d8e7d9;
     width: 20%;
     border-radius: 20px;
     padding: 4%;
@@ -193,31 +231,40 @@ button {
 }
 
 .card:hover {
-    background-color: #ece5d9;
     transform: translateY(-24px);
 }
 
-/* THINGS TO DO */
+.vertical-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 4%;
+    max-height: 80vh;
+    max-width: 50%;
 
-.to-do-section {
+}
+
+.vertical-gallery img {
+    width: 100%;
+    object-fit: cover;
+}
+
+/* THINGS TO DO, TRAVEL AGENTS */
+
+.to-do-section,
+.travel-agents-section {
     display: flex;
     flex-direction: column;
     min-width: 100%;
     gap: 4vw;
 }
 
-/* TRAVEL AGENTS */
-
-.travel-agents-section {
-    display: flex;
-    flex-direction: column;
-    min-width: 100%;
-}
-
 /* AS SEEN IN */
 
 .as-seen-in-section {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8vh;
 }
 
 /* GALLERY */
@@ -244,8 +291,11 @@ button {
 
 .faq-section {
     display: flex;
-    flex-direction: column;
-    align-self: flex-start;
+}
+
+.faq-section img {
+    height: 50vh;
+    border-radius: 20px;
 }
 
 .accordion-list {
@@ -259,6 +309,8 @@ button {
     width: 100%;
     text-align: left;
     transition: transform 0.3s ease-in-out;
+    background-color: transparent;
+    border: none;
 }
 
 .accordion::before {
@@ -286,17 +338,94 @@ button {
 .footer-section {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    align-self: flex-end;
 }
 
 .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     background-color: #578187;
-    margin: 0%;
     padding: 12%;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    max-width: 100vw;
+    min-width: 75vw;
 }
 
-.footer h1 {
+.footer h1,
+.footer h3,
+.footer a {
     color: #ece5d9;
+}
+
+@media screen and (max-width: 1024px) {
+
+    h1 {
+        font-weight: 300;
+        font-size: 24px;
+        white-space: nowrap;
+    }
+
+    h2 {
+        font-weight: 300;
+        font-size: 20px;
+    }
+
+    h3 {
+        font-weight: 200;
+        font-size: 16px;
+    }
+
+    h4 {
+        font-weight: 200;
+        font-size: 12px;
+    }
+
+    li,
+    p {
+        font-weight: 250;
+        color: #432d29;
+        font-size: 12px;
+    }
+
+    button {
+        font-size: 12px;
+    }
+
+    .hero-img-container {
+        background-image: url('assets/house-and-beach-vertical.JPG');
+    }
+
+    .header-title {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .reviews-section,
+    .amenities-section,
+    .faq-section {
+        flex-direction: column;
+    }
+
+    .faq-section {
+        max-width: 100%;
+    }
+
+    .card-row,
+    .img-row {
+        flex-direction: column;
+        gap: 4vh;
+    }
+
+    .card {
+        width: 90%;
+        border: #335863 solid 0.5px;
+    }
+
+    .small-disable {
+        display: none;
+    }
+
 }
