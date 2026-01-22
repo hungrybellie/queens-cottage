@@ -2,7 +2,6 @@ html,
 body {
     max-width: 100%;
     background-color: #FFF3DB;
-    scroll-behavior: smooth;
 }
 
 .scroll-container {
@@ -15,13 +14,13 @@ body {
 
 section {
     height: 100vh;
-    max-height: 100vh;
-    overflow: hidden;
     scroll-snap-align: start;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 4%;
+    max-height: 100vh;
+    overflow: auto
 }
 
 h1,
@@ -81,7 +80,8 @@ img {
     object-fit: cover;
 }
 
-a, button {
+a,
+button {
     background-color: #d8e7d9;
     border: 0.5px solid #335863;
     border-radius: 20px;
@@ -159,8 +159,9 @@ a, button {
 
 .reviews-section {
     display: flex;
+    flex-direction: column;
     max-width: 100%;
-    gap: 4%;
+    gap: 4vw;
 }
 
 .reviews-section img,
@@ -169,6 +170,57 @@ a, button {
     flex: 0 0 50%;
     border-radius: 20px;
     object-fit: cover;
+}
+
+.reviews-and-dots {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    min-width: 0;
+}
+
+.reviews {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    position: relative;
+    width: 100%;
+}
+
+.review {
+    min-width: 100%;
+    max-width: 100%;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+}
+
+.reviews::-webkit-scrollbar {
+    display: none;
+}
+
+.reviews-and-dots > div:last-child {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+    background-color: transparent;
+    border: none;
+}
+
+.reviews-and-dots > div:last-child a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #999;
+    transition: color 0.3s;
+    background-color: transparent;
+    border: none;
+
+}
+
+.reviews-and-dots > div:last-child a:hover {
+    color: #333;
 }
 
 /* AMENITIES */
@@ -353,7 +405,7 @@ a, button {
         font-size: 16px;
     }
 
-    a {
+    button {
         font-size: 16px;
     }
 
