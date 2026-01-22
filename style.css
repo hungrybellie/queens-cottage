@@ -171,39 +171,6 @@ a, button {
     object-fit: cover;
 }
 
-.reviews-carousel {
-    overflow: hidden;
-    display: flex;
-    flex-direction: row;
-    gap: calc(390px + 4%);
-}
-
-.reviews {
-    will-change: transform;
-    animation: train 23s linear infinite;
-    display: flex;
-    gap: 20px;
-    flex-shrink: 0;
-    padding-right: 20px;
-}
-
-.reviews div {
-    padding: 4%;
-    min-width: 350px;
-    max-width: 350px;
-    flex-shrink: 0;
-}
-
-@keyframes train {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
 /* AMENITIES */
 
 .amenities-section {
