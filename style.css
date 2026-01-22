@@ -216,7 +216,6 @@ button {
     transition: color 0.3s;
     background-color: transparent;
     border: none;
-
 }
 
 .reviews-and-dots > div:last-child a:hover {
