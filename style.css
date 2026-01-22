@@ -76,10 +76,9 @@ img {
     border: #335863 0.5px solid;
     max-width: 100%;
     object-fit: cover;
-    /* box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px; */
 }
 
-button {
+a, button {
     background-color: #d8e7d9;
     border: 0.5px solid #335863;
     border-radius: 20px;
@@ -117,8 +116,7 @@ button {
 
 .hero-img-container {
     background-image: url('assets/birdseye-view-VSCO.jpg');
-        border: #335863 0.5px solid;
-
+    border: #335863 0.5px solid;
     border-radius: 20px;
     width: 90vw;
     height: 80vh;
@@ -176,10 +174,6 @@ button {
     flex-direction: row;
     gap: calc(390px + 4%);
 }
-
-/* .reviews-carousel:hover .reviews {
-    animation-play-state: paused;
-} */
 
 .reviews {
     will-change: transform;
@@ -291,6 +285,7 @@ button {
 
 .faq-section {
     display: flex;
+    align-items: center;
 }
 
 .faq-section img {
@@ -354,8 +349,7 @@ button {
 }
 
 .footer h1,
-.footer h3,
-.footer a {
+.footer h3 {
     color: #ece5d9;
 }
 
@@ -363,7 +357,7 @@ button {
 
     h1 {
         font-weight: 300;
-        font-size: 24px;
+        font-size: 30px;
         white-space: nowrap;
     }
 
@@ -379,18 +373,18 @@ button {
 
     h4 {
         font-weight: 200;
-        font-size: 12px;
+        font-size: 16px;
     }
 
     li,
     p {
         font-weight: 250;
         color: #432d29;
-        font-size: 12px;
+        font-size: 16px;
     }
 
     button {
-        font-size: 12px;
+        font-size: 16px;
     }
 
     .hero-img-container {
@@ -405,7 +399,10 @@ button {
 
     .reviews-section,
     .amenities-section,
-    .faq-section {
+    .faq-section,
+    .travel-agents-section,
+    .to-do-section {
+        align-self: flex-start;
         flex-direction: column;
     }
 
