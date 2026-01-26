@@ -439,11 +439,13 @@ button {
     .faq-section,
     .travel-agents-section,
     .to-do-section {
+        box-sizing: border-box;
         align-self: flex-start;
         flex-direction: column;
     }
 
     .faq-section {
+        box-sizing: border-box;
         max-width: 100%;
     }
 
