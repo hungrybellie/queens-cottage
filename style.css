@@ -169,12 +169,15 @@ button {
     gap: 4vw;
 }
 
-.reviews-section img,
+.img-container img,
 .amenities-section img {
     width: 100%;
-    flex: 0 0 50%;
     border-radius: 20px;
     object-fit: cover;
+}
+
+.img-container {
+    width: 50%;
 }
 
 .reviews-and-dots {
@@ -183,6 +186,11 @@ button {
     justify-content: center;
     flex: 1;
     min-width: 0;
+}
+
+.review-tabs button {
+    background-color: transparent;
+    border: none;
 }
 
 .reviews {
@@ -420,7 +428,8 @@ button {
         font-size: 16px;
     }
 
-    button, a {
+    button,
+    a {
         font-size: 16px;
     }
 
@@ -464,4 +473,17 @@ button {
         display: none;
     }
 
+    .footer {
+        box-sizing: border-box;
+        overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        background-color: #578187;
+        padding: 8%;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        width: 100vw;
+        margin: 0;
+    }
 }

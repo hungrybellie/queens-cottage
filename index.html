@@ -33,7 +33,6 @@
         </section>
 
         <!-- AMENITIES -->
-
         <section>
             <div class="amenities-section">
                 <div>
@@ -74,7 +73,9 @@
                 </div>
 
                 <div class="img-row">
-                    <img src="assets/dining-room.JPG" alt="">
+                    <div class="img-container">
+                        <img src="assets/dining-room.JPG" alt="">
+                    </div>
 
                     <div class="reviews-and-dots">
                         <div class="reviews">
@@ -98,10 +99,10 @@
                             </div>
                         </div>
 
-                        <div>
-                            <a href="#review-1">o</a>
-                            <a href="#review-2">o</a>
-                            <a href="#review-3">o</a>
+                        <div class="review-tabs">
+                            <button onclick="scrollToReview('review-1')">o</button>
+                            <button onclick="scrollToReview('review-2')">o</button>
+                            <button onclick="scrollToReview('review-3')">o</button>
                         </div>
                     </div>
                 </div>
@@ -316,5 +317,14 @@
             });
         });
     });
+
+    function scrollToReview(id) {
+        const target = document.getElementById(id);
+        const container = target.closest('.reviews');
+        container.scrollTo({
+            left: target.offsetLeft,
+            behavior: 'smooth'
+        });
+    }
 
 </script>
