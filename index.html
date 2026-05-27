@@ -39,7 +39,7 @@
                     <h1>About the Villa</h1>
 
                     <p>Queen's Cottage is a 4-bedroom, 5-bathroom beachfront villa that sleeps up to 8 guests. We are
-                        located in the Silver Sands
+                        located in the Silver Sands gated
                         community, just steps away from the Caribbean Sea. Our staff has 25 years of combined experience
                         in Jamaica's bustling hospitality industry, and we have been operating this vacation home since
                         2020.
@@ -55,10 +55,12 @@
                         <li>Air Conditioning</li>
                         <li>Soaking Tub</li>
                         <li>Kayaks, Paddleboards, Board Games and a PS4</li>
-                        <li>24-hour security</li>
                     </ul>
                 </div>
-                <img src="assets/house-layers.JPG" alt="">
+
+                <div>
+                    <img src="assets/house-layers.JPG" alt="">
+                </div>
             </div>
         </section>
 
@@ -99,10 +101,10 @@
                             </div>
                         </div>
 
-                        <div class="review-tabs">
-                            <button onclick="scrollToReview('review-1')">o</button>
-                            <button onclick="scrollToReview('review-2')">o</button>
-                            <button onclick="scrollToReview('review-3')">o</button>
+                        <div class="smooth-tabs">
+                            <button onclick="scrollToItem('review-1', '.reviews')">•</button>
+                            <button onclick="scrollToItem('review-2', '.reviews')">•</button>
+                            <button onclick="scrollToItem('review-3', '.reviews')">•</button>
                         </div>
                     </div>
                 </div>
@@ -148,13 +150,23 @@
             <div class="gallery-section">
                 <h1 style="white-space: nowrap;">Take a look at us &rarr;</h1>
                 <div class="gallery-carousel">
-                    <img src="assets/gazebo-view.JPG" alt="">
-                    <img src="assets/primary-bedroom-doors.JPG" alt="">
-                    <img src="assets/first-deck-couches.JPG" alt="">
-                    <img src="assets/bikes.JPG" alt="">
-                    <img src="assets/full-house-view.JPG" alt="">
-                    <img src="assets/first-deck-view-left.JPG" alt="">
+                    <img id="picture-1" src="assets/gazebo-view.JPG" alt="">
+                    <img id="picture-2" src="assets/primary-bedroom-doors.JPG" alt="">
+                    <img id="picture-3" src="assets/first-deck-couches.JPG" alt="">
+                    <img id="picture-4" src="assets/bikes.JPG" alt="">
+                    <img id="picture-5" src="assets/full-house-view.JPG" alt="">
+                    <img id="picture-6" src="assets/first-deck-view-left.JPG" alt="">
                 </div>
+
+                <div class="smooth-tabs" style="display: flex; justify-content: center;">
+                    <button onclick="scrollToItem('picture-1', '.gallery-carousel')">•</button>
+                    <button onclick="scrollToItem('picture-2', '.gallery-carousel')">•</button>
+                    <button onclick="scrollToItem('picture-3', '.gallery-carousel')">•</button>
+                    <button onclick="scrollToItem('picture-4', '.gallery-carousel')">•</button>
+                    <button onclick="scrollToItem('picture-5', '.gallery-carousel')">•</button>
+                    <button onclick="scrollToItem('picture-6', '.gallery-carousel')">•</button>
+                </div>
+
             </div>
 
         </section>
@@ -282,6 +294,7 @@
 </html>
 
 <script aria-hidden="true">
+    // accordion
     var acc = document.getElementsByClassName("accordion");
     var i;
     for (i = 0; i < acc.length; i++) {
@@ -293,7 +306,6 @@
                     otherPanel.style.maxHeight = null;
                 }
             }
-
             this.classList.toggle("active");
             var panel = this.nextElementSibling;
             if (panel.style.maxHeight) {
@@ -304,27 +316,23 @@
         });
     }
 
-    // Source - https://stackoverflow.com/a
-    // Posted by Joseph Silber, modified by community. See post 'Timeline' for change history
-    // Retrieved 2026-01-26, License - CC BY-SA 3.0
-
+    // anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-
             document.querySelector(this.getAttribute('href')).scrollIntoView({
                 behavior: 'smooth'
             });
         });
     });
 
-    function scrollToReview(id) {
+    // review tabs
+    function scrollToItem(id, containerSelector) {
         const target = document.getElementById(id);
-        const container = target.closest('.reviews');
+        const container = document.querySelector(containerSelector);
         container.scrollTo({
             left: target.offsetLeft,
             behavior: 'smooth'
         });
     }
-
 </script>
