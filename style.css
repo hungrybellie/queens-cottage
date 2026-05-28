@@ -438,6 +438,7 @@ button {
         font-size: 16px;
     }
 
+
     .hero-img-container {
         background-image: url('assets/house-and-beach-vertical.JPG');
     }
@@ -455,6 +456,13 @@ button {
     .to-do-section {
         box-sizing: border-box;
         flex-direction: column;
+    }
+
+    .img-container {
+        width: 100%;
+    }
+    .amenities-section div {
+        width: 100%;
     }
 
     .faq-section {
